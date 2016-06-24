@@ -21,7 +21,7 @@ def getPWMValueFromNanoseconds(nanoseconds):
     return int(round(pwmValue))
 
 def armMotor():
-    print('Arming motor') 
+    print('Arming motor')
     pwm.set_pwm(0,0,260)
     time.sleep(5)
 
@@ -65,22 +65,22 @@ def calibrateThrottle():
     print("ESC should arm and produce a higher pitched long beep")
 
 def manualControl():
-    exit = False 
+    exit = False
     pwmValue = 261
     print("Press i to increase speed, d to decrease, q to quit")
     while not(exit):
-        action = raw_input() 
+        action = raw_input()
 
-	if action == "i":
+	    if action == "i":
             pwmValue+=1
         elif action == "d":
-	    pwmValue-=1
+            pwmValue-=1
         elif action == "q":
             exit = True
 
-	print(pwmValue)
+	    print(pwmValue)
 
-	if not(exit):
+	    if not(exit):
             pwm.set_pwm(0,0,pwmValue) 
 
 armMotor()
@@ -92,5 +92,3 @@ stopMotor()
 
 
 #calibrateThrottle()
-
-
