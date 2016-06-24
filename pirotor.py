@@ -71,16 +71,16 @@ def manualControl():
     while not(exit):
         action = raw_input()
 
-	    if action == "i":
+        if action == "i":
             pwmValue+=1
         elif action == "d":
             pwmValue-=1
         elif action == "q":
             exit = True
 
-	    print(pwmValue)
+        print(pwmValue)
 
-	    if not(exit):
+        if not(exit):
             pwm.set_pwm(0,0,pwmValue) 
 
 armMotor()
