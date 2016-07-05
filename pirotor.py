@@ -16,7 +16,7 @@ pwm = Adafruit_PCA9685.PCA9685()
 # Set frequency to 60hz, good for servos.
 pwm.set_pwm_freq(60)
 
-def motor1 = motor(0, pwm)
+motor1 = motor(0, pwm)
 
 motor1.arm()
 
