@@ -41,22 +41,40 @@ def stopMotors():
     motor3.stop()
     motor4.stop()
 
+def calibrateThrottles():
+    motor1.calibrateThrottle()
+    motor2.calibrateThrottle()
+    motor3.calibrateThrottle()
+    motor4.calibrateThrottle()
+
+def setPwmForAllMotors(pwmValue):
+    motor1.setPwmValue(self, pwmValue)
+    motor2.setPwmValue(self, pwmValue)
+    motor3.setPwmValue(self, pwmValue)
+    motor4.setPwmValue(self, pwmValue)
+
+def simpleExample():
+    print('Starting motors at 300')
+    setPwmForAllMotors(300)
+    time.sleep(3)
+    print('increasing to 360')
+    setPwmForAllMotors(360)
+    time.sleep(3)
+    print('increasing to 400')
+    setPwmForAllMotors(400)
+    time.sleep(3)
+    print('increasing to 450')
+    setPwmForAllMotors(450)
+    time.sleep(3)
+
 armMotors()
 
-#
-# def simpleMotorExample():
-#     print('Starting motor at 300')
-#     pwm.set_pwm(0,0,300)
-#     time.sleep(3)
-#     print('increasing to 360')
-#     pwm.set_pwm(0,0,360)
-#     time.sleep(3)
-#     print('increasing to 400')
-#     pwm.set_pwm(0,0,400)
-#     time.sleep(3)
-#     print('increasing to 450')
-#     pwm.set_pwm(0,0,450)
-#     time.sleep(3)
+time.sleep(5)
+simpleExample()
+
+stopMotors()
+
+
 #
 # def motorRangeExample():
 #     for x in range(1060, 1861):
@@ -68,19 +86,7 @@ armMotors()
 #         pwm.set_pwm(15,0,pwmValue)
 #         #time.sleep(1)
 #
-# def calibrateThrottle():
-#     print("Disconnect power from ESC, leave connected to PWM hat")
-#     time.sleep(5)
-#     print("Setting throttle to highest position, please connect power to ESC")
-#     pwm.set_pwm(0,0,457)
-#     time.sleep(10)
-#     print("The motor should produce a series of initialization beeps increasing in pitch, followed by another beep matching the pitch of the last initialization beep.")
-#     raw_input("Press enter once initialization beeps finish")
-#     print("Moving throttle to lowest position, two beeps of the same pitch should be emitted, followed by higher pitched long beep")
-#     pwm.set_pwm(0,0,261)
-#     raw_input("Press enter after the beeps")
-#     print("ESC exiting calibration mode")
-#     print("ESC should arm and produce a higher pitched long beep")
+
 #
 # def manualControl():
 #     exit = False
