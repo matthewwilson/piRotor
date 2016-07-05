@@ -23,11 +23,17 @@ def getPWMValueFromNanoseconds(nanoseconds):
 def armMotor():
     print('Arming motor')
     pwm.set_pwm(0,0,260)
+    pwm.set_pwm(1,0,260)
+    pwm.set_pwm(14,0,260)
+    pwm.set_pwm(15,0,260)
     time.sleep(5)
 
 def stopMotor():
     print("Stopping")
     pwm.set_pwm(0,0,260)
+    pwm.set_pwm(1,0,260)
+    pwm.set_pwm(14,0,260)
+    pwm.set_pwm(15,0,260)
 
 def simpleMotorExample():
     print('Starting motor at 300')
@@ -48,6 +54,9 @@ def motorRangeExample():
         pwmValue  = getPWMValueFromNanoseconds(x)
         print("increasing to %d" % (pwmValue))
         pwm.set_pwm(0,0,pwmValue)
+        pwm.set_pwm(1,0,pwmValue)
+        pwm.set_pwm(14,0,pwmValue)
+        pwm.set_pwm(15,0,pwmValue)
         #time.sleep(1)
 
 def calibrateThrottle():
@@ -81,13 +90,13 @@ def manualControl():
         print(pwmValue)
 
         if not(exit):
-            pwm.set_pwm(0,0,pwmValue) 
+            pwm.set_pwm(15,0,pwmValue) 
 
 armMotor()
-#motorRangeExample()
+motorRangeExample()
 #time.sleep(5)
 #simpleMotorExample()
-manualControl()
+#manualControl()
 stopMotor()
 
 
