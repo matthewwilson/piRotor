@@ -2,6 +2,7 @@ class Motor:
     def __init__(self, channel, pwm):
         self.channel = channel
         self.pwm = pwm
+        self.speed = 0
 
     def arm(self):
         print('Arming motor on channel: '+str(self.channel))
