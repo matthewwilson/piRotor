@@ -19,6 +19,7 @@ pwm.set_pwm_freq(60)
 motor1 = Motor(0, pwm)
 
 motor1.arm()
+motor1.setSpeed(300)
 
 # def getPWMValueFromNanoseconds(nanoseconds):
 #     print(nanoseconds)
