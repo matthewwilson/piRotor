@@ -48,10 +48,10 @@ def calibrateThrottles():
     motor4.calibrateThrottle()
 
 def setPwmForAllMotors(pwmValue):
-    motor1.setPwmValue(self, pwmValue)
-    motor2.setPwmValue(self, pwmValue)
-    motor3.setPwmValue(self, pwmValue)
-    motor4.setPwmValue(self, pwmValue)
+    motor1.setPwmValue(pwmValue)
+    motor2.setPwmValue(pwmValue)
+    motor3.setPwmValue(pwmValue)
+    motor4.setPwmValue(pwmValue)
 
 def simpleExample():
     print('Starting motors at 300')
