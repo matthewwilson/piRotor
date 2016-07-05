@@ -1,5 +1,5 @@
 class Motor:
-    def __init__(self, channel, pwm)
+    def __init__(self, channel, pwm):
         self.channel = channel
         self.pwm = pwm
 
