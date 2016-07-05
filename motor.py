@@ -3,6 +3,6 @@ class Motor:
         self.channel = channel
         self.pwm = pwm
 
-    def arm():
-        print('Arming motor on channel: '+self.channel)
+    def arm(self):
+        print('Arming motor on channel: '+str(self.channel))
         pwm.set_pwm(self.channel,0,260)
