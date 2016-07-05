@@ -5,7 +5,14 @@ class Motor:
 
     def arm(self):
         print('Arming motor on channel: '+str(self.channel))
+        self.speed = pwmValue
         self.pwm.set_pwm(self.channel,0,260)
 
     def setSpeed(self, pwmValue):
-        self.pwm.set_pwm(self.channel,0,pwmValue)    
+        self.speed = pwmValue
+        self.pwm.set_pwm(self.channel,0,pwmValue)
+
+    def stop(self):
+        print('Stopping motor on channel: '+str(self.channel))
+        self.speed = pwmValue
+        self.pwm.set_pwm(self.channel,0,260)

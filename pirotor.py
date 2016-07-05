@@ -17,29 +17,32 @@ pwm = Adafruit_PCA9685.PCA9685()
 pwm.set_pwm_freq(60)
 
 motor1 = Motor(0, pwm)
+motor2 = Motor(1, pwm)
+motor3 = Motor(14, pwm)
+motor4 = Motor(15, pwm)
 
-motor1.arm()
-motor1.setSpeed(300)
+def getPWMValueFromNanoseconds(nanoseconds):
+    print(nanoseconds)
+    pwmValue = nanoseconds / (1000000.0/4096.0/60.0)
+    return int(round(pwmValue))
 
-# def getPWMValueFromNanoseconds(nanoseconds):
-#     print(nanoseconds)
-#     pwmValue = nanoseconds / (1000000.0/4096.0/60.0)
-#     return int(round(pwmValue))
-#
-# def armMotor():
-#     print('Arming motor')
-#     pwm.set_pwm(0,0,260)
-#     pwm.set_pwm(1,0,260)
-#     pwm.set_pwm(14,0,260)
-#     pwm.set_pwm(15,0,260)
-#     time.sleep(5)
-#
-# def stopMotor():
-#     print("Stopping")
-#     pwm.set_pwm(0,0,260)
-#     pwm.set_pwm(1,0,260)
-#     pwm.set_pwm(14,0,260)
-#     pwm.set_pwm(15,0,260)
+def armMotors():
+    print('Arming motors')
+    motor1.arm()
+    motor2.arm()
+    motor3.arm()
+    motor4.arm()
+    time.sleep(5)
+
+def stopMotors():
+    print("Stopping")
+    motor1.stop()
+    motor2.stop()
+    motor3.stop()
+    motor4.stop()
+
+armMotors()
+
 #
 # def simpleMotorExample():
 #     print('Starting motor at 300')
