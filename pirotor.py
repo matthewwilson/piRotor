@@ -67,10 +67,30 @@ def simpleExample():
     setPwmForAllMotors(450)
     time.sleep(3)
 
+def manualControl():
+    exit = False
+    pwmValue = 261
+    print("Press i to increase speed, d to decrease, q to quit")
+    while not(exit):
+        action = raw_input()
+
+        if action == "i":
+            pwmValue+=1
+        elif action == "d":
+            pwmValue-=1
+        elif action == "q":
+            exit = True
+
+        print(pwmValue)
+
+        if not(exit):
+            setPwmForAllMotors(pwmValue)
+
 armMotors()
 
 time.sleep(5)
-simpleExample()
+#simpleExample()
+manualControl()
 
 stopMotors()
 
@@ -88,24 +108,7 @@ stopMotors()
 #
 
 #
-# def manualControl():
-#     exit = False
-#     pwmValue = 261
-#     print("Press i to increase speed, d to decrease, q to quit")
-#     while not(exit):
-#         action = raw_input()
-#
-#         if action == "i":
-#             pwmValue+=1
-#         elif action == "d":
-#             pwmValue-=1
-#         elif action == "q":
-#             exit = True
-#
-#         print(pwmValue)
-#
-#         if not(exit):
-#             pwm.set_pwm(15,0,pwmValue)
+
 #
 # armMotor()
 # motorRangeExample()
