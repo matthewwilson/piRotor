@@ -15,7 +15,7 @@ class PID:
         self.dt = self.dt - int(time.time())
 
         if self.dt <= 0:
-            self.dt = 0.5
+            self.dt = 1
 
         print("DT: "+str(self.dt))
 
