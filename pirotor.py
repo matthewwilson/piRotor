@@ -118,6 +118,8 @@ def autonomousControl():
 
     pitchPIDController = PID(1,0,0)
 
+    setPwmForAllMotors(300)
+
     while True:
         heading, roll, pitch = bno.read_euler()
 
@@ -135,13 +137,18 @@ def autonomousControl():
 
         print('motor1={0} motor2={1} motor3={2} motor4={3}'.format(motor1Value, motor2Value, motor3Value, motor4Value))
 
+        motor1.setPwmValue(motor1Value)
+        motor2.setPwmValue(motor2Value)
+        motor3.setPwmValue(motor3Value)
+        motor4.setPwmValue(motor4Value)
+
         time.sleep(1)
 
-#armMotors()
+armMotors()
 
-#time.sleep(5)
+time.sleep(2)
 #simpleExample()
 #manualControl()
 autonomousControl()
 
-#stopMotors()
+stopMotors()
