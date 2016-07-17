@@ -4,6 +4,7 @@ from pid import PID
 from Adafruit_BNO055 import BNO055
 
 import time
+import sys
 # Import the PCA9685 module.
 import Adafruit_PCA9685
 
