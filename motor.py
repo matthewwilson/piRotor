@@ -13,10 +13,10 @@ class Motor:
 
     def setPwmValue(self, pwmValue):
 
-        if pwmValue > maxPwm:
-            pwmValue = maxPwm
-        elif pwmValue < minPwm:
-            pwmValue = minPwm
+        if pwmValue > self.maxPwm:
+            pwmValue = self.maxPwm
+        elif pwmValue < self.minPwm:
+            pwmValue = self.minPwm
 
         self.pwmValue = pwmValue
         self.pwm.set_pwm(self.channel,0,pwmValue)
