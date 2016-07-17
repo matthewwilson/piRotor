@@ -1,8 +1,10 @@
 class Motor:
-    def __init__(self, channel, pwm):
+    def __init__(self, channel, pwm, minPwm, maxPwm):
         self.channel = channel
         self.pwm = pwm
         self.pwmValue = 0
+        self.minPwm = minPwm
+        self.maxPwm = maxPwm
 
     def arm(self):
         print('Arming motor on channel: '+str(self.channel))
@@ -10,8 +12,17 @@ class Motor:
         self.pwm.set_pwm(self.channel,0,260)
 
     def setPwmValue(self, pwmValue):
+
+        if pwmValue > maxPwm:
+            pwmValue = maxPwm
+        elif pwmValue < minPwm:
+            pwmValue = minPwm
+
         self.pwmValue = pwmValue
         self.pwm.set_pwm(self.channel,0,pwmValue)
+
+    def getPwmValue(self):
+        return self.pwmValue
 
     def stop(self):
         print('Stopping motor on channel: '+str(self.channel))

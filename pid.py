@@ -2,14 +2,12 @@ import time
 
 class PID:
 
-    def __init__(self, pTune, iTune, dTune, escMin, escMax):
+    def __init__(self, pTune, iTune, dTune):
         self.lastError = 0.0
         self.pTune = pTune
         self.iTune = iTune
         self.dTune = dTune
         self.iError = 0.0
-        self.escMin = escMin
-        self.escMax = escMax
         self.dt = int(time.time())
 
     def update(self, input, target):
@@ -30,10 +28,5 @@ class PID:
         self.lastError = error
 
         output = pError + iError + dError
-
-        if output > self.escMax:
-            output = self.escMax
-        elif output < self.escMin:
-            output = self.escMin
 
         return output
