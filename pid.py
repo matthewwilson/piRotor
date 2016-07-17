@@ -16,7 +16,7 @@ class PID:
 
         self.dt = self.dt - int(time.time())
 
-        if self.dt == 0
+        if self.dt == 0:
             self.dt = 1
 
         error = target - input
@@ -31,9 +31,9 @@ class PID:
 
         output = pError + iError + dError
 
-        if output > self.escMax
+        if output > self.escMax:
             output = self.escMax
-        elif output < self.escMin
+        elif output < self.escMin:
             output = self.escMin
 
         return output
