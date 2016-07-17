@@ -23,7 +23,8 @@ class PID:
 
         pError = error * self.pTune
         iError = self.iError * self.iTune
-        dError = (error - self.lastError) / self.dt
+        dError = ((error - self.lastError) / self.dt) * self.dTune
+
 
         self.lastError = error
 
