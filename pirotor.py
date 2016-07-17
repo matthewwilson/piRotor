@@ -116,7 +116,7 @@ def autonomousControl():
     print('Magnetometer ID:    0x{0:02X}'.format(mag))
     print('Gyroscope ID:       0x{0:02X}\n'.format(gyro))
 
-    pitchPIDController = PID(1,0,0)
+    pitchPIDController = PID(1,1,1)
 
     setPwmForAllMotors(300)
 
@@ -142,7 +142,7 @@ def autonomousControl():
         motor3.setPwmValue(motor3Value)
         motor4.setPwmValue(motor4Value)
 
-        time.sleep(1)
+        time.sleep(0.5)
 
 armMotors()
 
