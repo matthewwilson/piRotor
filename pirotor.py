@@ -119,7 +119,7 @@ def autonomousControl():
 
     pitchPIDController = PID(1,0,0)
 
-    setPwmForAllMotors(280)
+    setPwmForAllMotors(300)
 
     while True:
         heading, roll, pitch = bno.read_euler()
