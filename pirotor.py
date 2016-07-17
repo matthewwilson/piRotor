@@ -133,7 +133,7 @@ def autonomousControl():
         motor3Value = int(round(motor3.getPwmValue()-pitchPIDOutput))
         motor4Value = int(round(motor4.getPwmValue()-pitchPIDOutput))
 
-        print('motor1={0} motor2={1} motor3={2} motor4={4}'.format(motor1Value, motor2Value, motor3Value, motor4Value))
+        print('motor1={0} motor2={1} motor3={2} motor4={3}'.format(motor1Value, motor2Value, motor3Value, motor4Value))
 
         time.sleep(1)
 
