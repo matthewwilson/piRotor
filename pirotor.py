@@ -144,11 +144,14 @@ def autonomousControl():
 
         time.sleep(0.5)
 
-armMotors()
 
-time.sleep(2)
-#simpleExample()
-#manualControl()
-autonomousControl()
-
-stopMotors()
+try:
+    armMotors()
+    time.sleep(2)
+    #simpleExample()
+    #manualControl()
+    autonomousControl()
+    stopMotors()
+except KeyboardInterrupt:
+    stopMotors()
+    sys.exit()
