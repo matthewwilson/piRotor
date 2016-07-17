@@ -26,10 +26,10 @@ if not bno.begin():
 # Set frequency to 60hz, good for servos.
 pwm.set_pwm_freq(60)
 
-motor1 = Motor(0, pwm)
-motor2 = Motor(1, pwm)
-motor3 = Motor(14, pwm)
-motor4 = Motor(15, pwm)
+motor1 = Motor(0, pwm, 276,457)
+motor2 = Motor(1, pwm, 276,457)
+motor3 = Motor(14, pwm, 276,457)
+motor4 = Motor(15, pwm, 276,457)
 
 def getPWMValueFromNanoseconds(nanoseconds):
     print(nanoseconds)
@@ -116,7 +116,7 @@ def autonomousControl():
     print('Magnetometer ID:    0x{0:02X}'.format(mag))
     print('Gyroscope ID:       0x{0:02X}\n'.format(gyro))
 
-    pitchPIDController = PID(1,0,0,276,457)
+    pitchPIDController = PID(1,0,0)
 
     while True:
         heading, roll, pitch = bno.read_euler()
