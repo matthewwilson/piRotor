@@ -14,17 +14,28 @@ class PID:
 
         self.dt = self.dt - int(time.time())
 
-        if self.dt == 0:
+        if self.dt <= 0:
             self.dt = 1
 
+        print("DT: "+str(self.dt))
+
         error = target - input
+
+        print("ERROR: "+str(error))
 
         self.iError += (error + self.iError) * self.dt
 
         pError = error * self.pTune
+
+        print("pError: "+str(pError))
+
         iError = self.iError * self.iTune
+
+        print("iError: "+str(iError))
+
         dError = ((error - self.lastError) / self.dt) * self.dTune
 
+        print("dError: "+str(dError))
 
         self.lastError = error
 
