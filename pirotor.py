@@ -116,9 +116,9 @@ def autonomousControl():
     print('Magnetometer ID:    0x{0:02X}'.format(mag))
     print('Gyroscope ID:       0x{0:02X}\n'.format(gyro))
 
-    pitchPIDController = PID(1,1,1)
+    pitchPIDController = PID(1,0,0)
 
-    setPwmForAllMotors(300)
+    setPwmForAllMotors(280)
 
     while True:
         heading, roll, pitch = bno.read_euler()
