@@ -125,7 +125,7 @@ def autonomousControl():
 
         print('Heading={0:0.2F} Roll={1:0.2F} Pitch={2:0.2F}'.format(heading, roll, pitch))
 
-        print('PITCH PID OUTPUT: '+str(pitchPIDOutput)
+        print('PITCH PID OUTPUT: '+str(pitchPIDOutput))
 
         time.sleep(1)
 
