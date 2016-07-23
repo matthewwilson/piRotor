@@ -1,25 +1,15 @@
 from __future__ import division
+from adafruitLoader import AdafruitLoader
 from motor import Motor
 from pid import PID
-from Adafruit_BNO055 import BNO055
+
 
 import time
 import sys
-# Import the PCA9685 module.
-import Adafruit_PCA9685
 
-
-# Uncomment to enable debug output.
-#import logging
-#logging.basicConfig(level=logging.DEBUG)
-
-# Initialise the PCA9685 using the default address (0x40).
-pwm = Adafruit_PCA9685.PCA9685()
-
-# Create and configure the BNO sensor connection.  Make sure only ONE of the
-# below 'bno = ...' lines is uncommented:
-# Raspberry Pi configuration with serial UART and RST connected to GPIO 18:
-bno = BNO055.BNO055(serial_port='/dev/ttyAMA0', rst=18)
+adafruitLoader = AdafruitLoader('test')
+pwm = adafruitLoader.getPwmModule()
+bno = adafruitLoader.getBNO055Module()
 
 if not bno.begin():
     raise RuntimeError('Failed to initialize BNO055! Is the sensor connected?')
