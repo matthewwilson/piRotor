@@ -12,6 +12,8 @@ class PID:
 
     def update(self, input, target):
 
+        print("Input: "+str(input))
+
         self.dt = self.dt - int(time.time())
 
         if self.dt <= 0:
@@ -40,5 +42,7 @@ class PID:
         self.lastError = error
 
         output = pError + iError + dError
+
+        print("output: "+str(output))
 
         return output
